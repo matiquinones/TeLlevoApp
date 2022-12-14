@@ -1,0 +1,129 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Registro de Viajes</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" defaultHref="home" text=""></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+  
+</ion-header>
+
+
+<ion-content>
+  <ion-card color="light" class="ion-padding">
+
+    <h1>Registrar nuevo viaje</h1>
+
+
+  <form form #formViajes="ngForm">
+  <ion-item class="itemInput">
+    <ion-label>Patente: </ion-label>
+    <ion-input type="text" placeholder="Ej: XX-XX-00" maxlength="8" name="patente"  [(ngModel)]="newViaje.rut" required></ion-input>
+  </ion-item>
+  <ion-item class="itemInput">
+    <ion-label >Nombre: </ion-label>
+    <ion-input type="text" placeholder="Ej: Juan Carlos" maxlength="30"  name="nombre"  [(ngModel)]="newViaje.nombre" required></ion-input>
+  </ion-item>
+  <ion-item class="itemInput">
+    <ion-label >Fono: </ion-label>
+    <ion-input type="number" placeholder="Ej: 973292738"    name="fono" [(ngModel)]="newViaje.fono" required></ion-input>
+</ion-item>
+<ion-item class="itemInput">
+  <ion-label >Lugar de partida: </ion-label>
+  <ion-input type="text" placeholder="Ej: Duoc UC" length="20"  name="partida" [(ngModel)]="newViaje.partida" required></ion-input>
+</ion-item>
+<ion-item class="itemInput">
+  <ion-label >Lugar de destino: </ion-label>
+  <ion-input type="text" placeholder="Ej: Concepcion" length="20"  name="destino" [(ngModel)]="newViaje.destino" required></ion-input>
+</ion-item>
+<ion-item class="itemInput">
+  <ion-label>Valor por persona: $</ion-label>
+  <ion-input type="text" placeholder="2000" maxlength="6" name="destino" required [(ngModel)]="newViaje.valor"> </ion-input>
+</ion-item>  
+
+<ion-item class="itemInput">
+  <ion-label>Hora de partida: </ion-label>
+  <ion-input name="hora" type="time" required [(ngModel)]="newViaje.hora"></ion-input>
+</ion-item>
+
+<ion-item>
+  <ion-label>Foto del vehiculo: </ion-label>
+  <ion-button > Subir archivo 
+    <ion-icon slot="icon-only" name="add" #Txtphoto></ion-icon>
+  </ion-button>
+</ion-item>    
+</form>
+<br>
+  <ion-button expand="block" class="ion-margin-top" type="submit color=success" (click)="save()" [disabled]="formViajes.invalid">
+    
+    Publicar aviso
+  </ion-button>
+
+</ion-card>
+
+
+
+  <!-- <div *ngIf=nombre>
+    <ion-text color="secondary">
+
+      <h1 class="ion-text-center">Nombre</h1>
+      <h2>{{nombre}}</h2>
+    </ion-text>   
+     <ion-text color="secondary">
+      <h1 class="ion-text-center">Fono</h1>
+      <h2>{{fono}}</h2>
+    </ion-text>
+
+    <ion-text color="secondary" >
+    <ion-button (click)="eliminar(txtRut)" fill="clear" class="ion-text-center">
+      <ion-icon slot="icon-only" name="trash"></ion-icon>
+    </ion-button>
+  </ion-text>
+  </div> 
+  
+  <div *ngIf="listado.length > 0">
+    <h1 class="ion-text-center">Listado de Viajes</h1>
+    <ion-list>
+
+      <div *ngFor="let item of listado">
+              <ion-card>
+
+        <ion-item>
+          <ion-label> Nombre: {{item[0].nombre}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> Fono: {{item[0].fono}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> Rut: {{item[0].rut}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> Lugar de partida: {{item[0].partida}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> Lugar de destino: {{item[0].destino}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> Valor: {{item[0].valor}}</ion-label>
+        </ion-item>
+        <ion-item>
+          <ion-label> Hora: {{item[0].hora}}</ion-label>
+        </ion-item>
+        </ion-card>
+
+      </div>
+
+    </ion-list>
+  </div>
+
+</ion-content>
+
+
+  <ion-footer>
+    <ion-toolbar>
+        <ion-button (click)="listar()" slot="end">
+        Ver lista de viajes
+      </ion-button>
+
+    </ion-toolbar>
+  </ion-footer>-->

@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-buttons slot="start">
+      <ion-back-button mode="ios" defaultHref="home" text=""></ion-back-button>
+    </ion-buttons>
+    <ion-title>Mis Viajes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content  scroll-y="true" >
+  
+
+    
+  <ion-item *ngFor="let producto of viajes">
+
+    <ion-avatar slot="start">
+      <img src="/assets/camaro.jpg" />
+    </ion-avatar>
+    <ion-label>
+      <h2>{{producto.partida}} -> {{producto.destino}}</h2>
+      <p>Viaje finalizado con exito</p>
+    </ion-label>
+
+    <ion-text color="dark" slot="end">
+      <h3>${{producto.valor}}</h3>
+    </ion-text>
+  </ion-item> 
+
+
+
+  <ion-infinite-scroll threshold="100px" (ionInfinite)="($event)">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="Cargando...">
+    </ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
+
+</ion-content>

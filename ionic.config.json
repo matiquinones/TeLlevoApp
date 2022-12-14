@@ -1,0 +1,7 @@
+{
+  "name": "guard_storage",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

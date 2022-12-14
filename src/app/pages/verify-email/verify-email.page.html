@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Verification </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content *ngIf="user$ | async as user">
+          <ion-card>
+
+  <ion-row>
+
+    <ion-col>
+      <h2>Thank you for Registering!</h2>
+      <p>Te hemos enviado un mensaje de confirmacion a:  <strong>{{user.email}}</strong></p>
+      <p>Porfavor, revisa tu buzon de mensajes y haz click en el link para verificar tu correo electronico.</p>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <ion-button type="submit" color="primary" expand="block" (click)="onSendEmail()">
+        Resend verification email</ion-button>
+    </ion-col>
+    <ion-button href="home">
+      Continuar a TeLlevoApp </ion-button>
+  </ion-row>   
+</ion-card>
+
+
+</ion-content> 
